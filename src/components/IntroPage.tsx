@@ -1,9 +1,12 @@
-import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import CartaProyectoMusical from "./CartaProyectoMusical";
 
 const IntroPage = () => {
   const [seleccionadoId, setSeleccionadoId] = React.useState<number | null>();
+
+  const height = window.innerHeight;
+
   const ref = useRef(null);
 
   const {scrollYProgress } = useScroll({ container: ref })
@@ -16,16 +19,17 @@ const IntroPage = () => {
         style={{ 
           display: 'flex', 
           flexDirection: 'row', 
-          overflowX: 'scroll'
+          overflowX: 'scroll',
+          height: height
         }} 
         >
         {cards.map((card) => (
             <motion.div 
               whileHover={{ scale: 1.1 }} 
               onClick={() => setSeleccionadoId(card.id)}
-              style={{ x }}
+              style={{ x, margin: 50 }}
               >
-              <CartaProyectoMusical key={card.id} id={card.id} nombre={card.nombre} imagenURL={card.imagenURL} />
+              <CartaProyectoMusical key={card.id} id={card.id} nombre={card.nombre} imagenURL={card.imagenURL} descripcion={card.descripcion} prevSongURL={card.prevSongURL} />
             </motion.div>
         ))}
       </motion.div>    
@@ -38,58 +42,63 @@ export default IntroPage;
 const cards: ProyectoMusical[] = [
   {
     id: 1,
-    nombre: "Proyecto 1",
+    nombre: "Alterno Delete",
     instrumentos: 4,
     email: "proyecto1@example.com",
     telefono: "123-456-7890",
-    descripcion: "Un proyecto musical emocionante.",
+    descripcion: "En el corazón de Zacatecas, la ciudad de cantera rosa con sus entrañables y difíciles callejones, he estado tejiendo melodías desde 2017. Mi música es un viaje a través de la sutileza del chill, la nostalgia de las guitarras lo-fi y la profundidad de los versos trap. Este canal es mi lienzo, donde comparto mis creaciones musicales.",
     generoMusical: "Rock",
     password: "password123",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/0ruDKCONAQDkwZjYrSuqYk?utm_source=generator'
   },
   {
     id: 2,
-    nombre: "Proyecto 2",
+    nombre: "Viajero",
     instrumentos: 5,
     email: "proyecto2@example.com",
     telefono: "098-765-4321",
-    descripcion: "Un proyecto musical innovador.",
+    descripcion: "Banda Jerezana de Rock Alternativo.",
     generoMusical: "Jazz",
     password: "password456",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/QnC4ZV6.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/1G5GEaKMUYJbiYnDWWBVNw'
   },
   {
     id: 3,
-    nombre: "Proyecto 3",
+    nombre: "Hovering Sex Vipers",
     instrumentos: 3,
     email: "proyecto3@example.com",
     telefono: "555-123-4567",
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/2oQ2ye9.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/6WRRxgKx2gAB60TuZppmg5?utm_source=generator'
   },
   {
     id: 4,
-    nombre: "Proyecto 4",
+    nombre: "Karatevatos",
     instrumentos: 3,
     email: "proyecto3@example.com",
     telefono: "555-123-4567",
-    descripcion: "Un proyecto musical melódico.",
+    descripcion: "Fast punk rock/Hardcore melódico desde Zacatecas, México.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/XfXq5uq.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 5,
-    nombre: "Proyecto 5",
+    nombre: "Zai Esparza",
     instrumentos: 3,
     email: "proyecto3@example.com",
     telefono: "555-123-4567",
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/MRluw2k.png",
+    prevSongURL: 'https://open.spotify.com/embed/track/5bup1GOry3Zii9mF0Gj8wM?utm_source=generator'
   },
   {
     id: 6,
@@ -100,7 +109,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 7,
@@ -111,7 +121,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 8,
@@ -122,7 +133,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 9,
@@ -133,7 +145,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 10,
@@ -144,7 +157,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 11,
@@ -155,7 +169,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 12,
@@ -166,7 +181,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 13,
@@ -177,7 +193,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 14,
@@ -188,7 +205,8 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   },
   {
     id: 15,
@@ -199,6 +217,7 @@ const cards: ProyectoMusical[] = [
     descripcion: "Un proyecto musical melódico.",
     generoMusical: "Pop",
     password: "password789",
-    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg"
+    imagenURL: "https://i.imgur.com/LxBJBGi.jpeg",
+    prevSongURL: 'https://open.spotify.com/embed/track/41xqWgu0gSsYhlS11pA15S?utm_source=generator'
   }
 ];

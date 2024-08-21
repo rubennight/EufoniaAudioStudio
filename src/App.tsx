@@ -2,7 +2,6 @@ import './App.css'
 import { motion } from "framer-motion";
 import IntroPage from './components/IntroPage'
 import { Divider } from '@mui/material';
-import React from 'react';
 import MenuEufonia from './components/menu/MenuEufonia';
 import SectionPage from './components/SectionPage';
 
@@ -12,6 +11,7 @@ function App() {
   return (
     <>
       <div>
+        <MenuEufonia />
         <motion.h1
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -20,7 +20,6 @@ function App() {
           >
           Eufonía Audio Studio
         </motion.h1>
-        <MenuEufonia />
         <Divider style={{ margin: 50}} />
       </div>
       <IntroPage />

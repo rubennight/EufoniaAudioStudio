@@ -7,5 +7,6 @@ interface ProyectoMusical {
     descripcion: string,
     generoMusical: string,
     password: string,
-    imagenURL: string
+    imagenURL: string,
+    prevSongURL: string
 }
