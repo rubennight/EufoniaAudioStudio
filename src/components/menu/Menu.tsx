@@ -2,10 +2,21 @@ export function Menu() {
     return (
       <nav className="menu">
         <ul>
-          <li>Portfolio</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Search</li>
+          <li>
+            <button>Citas</button>
+          </li>
+          <br />
+          <li>
+            <button>Servicios</button>
+          </li>
+          <br />
+          <li>
+            <button>Artistas</button>
+          </li>
+          <br />
+          <li>
+            <button>Belicore</button>
+          </li>
         </ul>
       </nav>
     );

@@ -4,30 +4,40 @@ import IntroPage from './components/IntroPage'
 import { Divider } from '@mui/material';
 import MenuEufonia from './components/menu/MenuEufonia';
 import SectionPage from './components/SectionPage';
+import eufoniaAudioStudioPromo from './assets/gifs/Estudio-de-grabación-en-Zacatecas.gif';
 
 function App() {
+  const width = window.innerWidth;
   const height = window.innerHeight;
 
   return (
-    <>
-      <div>
-        <MenuEufonia />
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 3 }}
-          style={{ color: '#0092CE' }}
-          >
-          Eufonía Audio Studio
-        </motion.h1>
-        <Divider style={{ margin: 50}} />
+    <div style={{ width: width }}>
+      <div style={{ top: 0 }}>
+        <SectionPage>
+          <img src={eufoniaAudioStudioPromo} style={{ height: '100%', width: '100%', objectFit: 'contain' }} />
+        </SectionPage>        
+        <Divider style={{ margin: 50, width: width}} />
       </div>
       <IntroPage />
       <div style={{ height: height * 0.3}}>
-        <SectionPage>Nuestra misión, que te escuchen como quieres</SectionPage>
-        <SectionPage>Nos dedicamos a la producción y post-producción de audio</SectionPage>
+
+        <SectionPage>
+          <div>
+            <motion.img src="https://i.imgur.com/Kvtje2D.png" style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+            />
+            <br />
+            <br />
+            <div style={{ 
+              display: 'flex',
+              flexDirection: 'row'
+            }}>
+              <h2>Nuestra misión... Que te escuchen como quieres.</h2>  
+              <MenuEufonia />                      
+            </div>
+          </div>
+        </SectionPage>
       </div>
-    </>
+    </div>
   )
 }
 
