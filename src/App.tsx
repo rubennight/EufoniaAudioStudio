@@ -20,10 +20,9 @@ function App() {
       </div>
       <IntroPage />
       <div style={{ height: height * 0.3}}>
-
         <SectionPage>
           <div>
-            <motion.img src="https://i.imgur.com/Kvtje2D.png" style={{ height: '100%', width: '100%', objectFit: 'contain' }}
+            <motion.img src="https://i.imgur.com/Kvtje2D.png" style={{ height: '100%', width: '100%', objectFit: 'contain', borderRadius: 10 }}
             />
             <br />
             <br />
