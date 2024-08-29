@@ -5,7 +5,6 @@ import { useInView } from "framer-motion";
 
 import CartaProyectoMusical from '../components/CartaProyectoMusical';
 import { Divider } from '@mui/material';
-import MenuEufonia from '../components/menu/MenuEufonia';
 
 export default function ArtistasPage(){
     const height = window.innerHeight;
@@ -29,7 +28,13 @@ export default function ArtistasPage(){
             rowGap: '20px'
             }}>
             {cards.map((card) => (
-                <CartaProyectoMusical key={card.id} id={card.id} nombre={card.nombre} imagenURL={card.imagenURL} descripcion={card.descripcion} prevSongURL={card.prevSongURL} />
+                <CartaProyectoMusical 
+                  key={card.id} 
+                  id={card.id} 
+                  nombre={card.nombre} 
+                  imagenURL={card.imagenURL} 
+                  descripcion={card.descripcion} 
+                  prevSongURL={card.prevSongURL} />
             ))}
         </div>
       </div>

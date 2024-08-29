@@ -10,7 +10,9 @@ import SectionPage from '../components/SectionPage';
         return(
             <div>
                 <SectionPage>
-                    Hola
+                    <motion.div>
+                        <img />
+                    </motion.div>
                 </SectionPage>
                 <motion.div style={{ 
                     display: 'flex',
