@@ -8,7 +8,6 @@ export default function CitasPage(){
                 width: '100%'
             }}
             >
-            
         </div>
     )
 }
