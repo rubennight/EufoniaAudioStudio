@@ -38,7 +38,7 @@ body {
 ::-webkit-scrollbar {
   height: 5px;
   width: 5px;
-  background: f2f2f2;
+  background: #f2f2f2;
   -webkit-border-radius: 1ex;
 }
 
@@ -101,4 +101,18 @@ section span {
   display: block;
   transform: translateX(-100px);
   opacity: 0;
+}
+
+.label-dinamico{
+  background-color: #0092CE;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: right;
+  padding: 10px;
+}
+
+.label-dinamico:nth-child(2) {
+  background-color: #f1c583;
+  color: white;
 }

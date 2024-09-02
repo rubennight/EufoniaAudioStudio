@@ -7,7 +7,7 @@ export function Menu() {
       <nav className="menu">
         <ul>
           <li>
-            <button>Citas</button>
+            <button onClick={ () => navigate('/citas')}>Citas</button>
           </li>
           <br />
           <li>
