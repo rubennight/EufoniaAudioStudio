@@ -1,7 +1,5 @@
-    import { Button, Divider, Input, TextField } from '@mui/material';
+    import { Button, TextField } from '@mui/material';
 import { motion } from 'framer-motion';
-import SectionPage from '../components/SectionPage';
-
 
     export default function ServiciosPage(){
         const height = window.innerHeight;
@@ -9,11 +7,6 @@ import SectionPage from '../components/SectionPage';
 
         return(
             <div>
-                <SectionPage>
-                    <motion.div>
-                        <img />
-                    </motion.div>
-                </SectionPage>
                 <motion.div style={{ 
                     display: 'flex',
                     justifyContent: 'space-evenly',

@@ -82,7 +82,7 @@ section {
   display: flex;
   justify-content: flex-end;
   overflow: hidden;
-  background: #fcfcfc;
+  background: #ffffff;
 }
 
 section:nth-child(2) {

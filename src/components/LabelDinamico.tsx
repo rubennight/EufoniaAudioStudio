@@ -6,9 +6,8 @@ export default function LabelDinamico({
     children, 
     backgroundColor = "#0092CE", 
     translateX = -200,
-    delay = "0s"  }) {
+    delay = "0s" }) {
   const width = window.innerWidth;  
-  const height = window.innerHeight;
 
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
