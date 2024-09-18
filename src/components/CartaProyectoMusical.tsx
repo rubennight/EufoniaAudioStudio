@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import IFrame from "./IFrame";
 
-const CartaProyectoMusical = ({ id, nombre, imagenURL, descripcion, prevSongURL } : ProyectoMusical) => {
+const CartaProyectoMusical: React.FC <{ proyectoMusical: ProyectoMusical}>  = ({ proyectoMusical })  => {
   const height = window.innerHeight;
   const width = window.innerWidth;
 
@@ -10,7 +10,6 @@ const CartaProyectoMusical = ({ id, nombre, imagenURL, descripcion, prevSongURL 
         position: "relative",
         height: height * 0.7,
         width: width * 0.3,
-        borderRadius: 10,
         overflow: "hidden",
         backgroundColor: "black",
         border: "1px solid #ddd", // Borde sutil
@@ -19,7 +18,7 @@ const CartaProyectoMusical = ({ id, nombre, imagenURL, descripcion, prevSongURL 
       whileHover="hovered"
     >
         <motion.div style={{
-                backgroundImage: `url(${imagenURL})`,
+                backgroundImage: `url(${proyectoMusical.imagenURL})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 height: '100%',
@@ -27,7 +26,7 @@ const CartaProyectoMusical = ({ id, nombre, imagenURL, descripcion, prevSongURL 
                 position: 'relative',
                 bottom: 0,
                 right: 0,
-            }}
+            }}  
             variants={{
                 hovered: {
                     height: '50%',
@@ -66,7 +65,7 @@ const CartaProyectoMusical = ({ id, nombre, imagenURL, descripcion, prevSongURL 
                 padding: 25
             }}
             >
-                <IFrame url={prevSongURL} />
+                <IFrame url={proyectoMusical.prevSongURL} />
             </motion.div>
         </motion.div>
         <motion.h2 
@@ -85,7 +84,7 @@ const CartaProyectoMusical = ({ id, nombre, imagenURL, descripcion, prevSongURL 
                     }
                 }}
             >
-                { nombre }
+                { proyectoMusical.nombre }
         </motion.h2>        
     </motion.div>
   );

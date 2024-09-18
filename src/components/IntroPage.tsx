@@ -7,12 +7,6 @@ const IntroPage = () => {
 
   const height = window.innerHeight;
 
-  const ref = useRef(null);
-
-  const {scrollYProgress } = useScroll({ container: ref })
-
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"])
-
   return (
     <>
       <motion.div 
@@ -25,11 +19,9 @@ const IntroPage = () => {
         >
         {cards.map((card) => (
             <motion.div 
-              whileHover={{ scale: 1.1 }} 
               onClick={() => setSeleccionadoId(card.id)}
-              style={{ x, margin: 50 }}
               >
-              <CartaProyectoMusical key={card.id} id={card.id} nombre={card.nombre} imagenURL={card.imagenURL} descripcion={card.descripcion} prevSongURL={card.prevSongURL} />
+              <CartaProyectoMusical proyectoMusical={card} />
             </motion.div>
         ))}
       </motion.div>    

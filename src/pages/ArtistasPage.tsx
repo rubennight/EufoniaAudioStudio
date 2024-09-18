@@ -1,42 +1,32 @@
-import React from 'react';
+import { motion } from 'framer-motion';
 
-import { useRef } from "react";
-import { useInView } from "framer-motion";
-
-import CartaProyectoMusical from '../components/CartaProyectoMusical';
 import { Divider } from '@mui/material';
+import PresentacionProyectoMusical from '../components/PresentacionProyectoMusical';
 
 export default function ArtistasPage(){
-    const height = window.innerHeight;
-    const width = window.innerWidth;
 
     return(
-      <div>
+      <div style={{ width: '100%' }}>
         <div>
           <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
             <h1>Conoce nuestro trabajo.</h1>            
           </div>
           <Divider style={{ margin: 20}} />
         </div>
-        <div style={{ 
-            width: width, 
-            display: 'flex', 
-            flexDirection: 'row',
-            flexWrap: 'wrap',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-            rowGap: '20px'
-            }}>
-            {cards.map((card) => (
-                <CartaProyectoMusical 
-                  key={card.id} 
-                  id={card.id} 
-                  nombre={card.nombre} 
-                  imagenURL={card.imagenURL} 
-                  descripcion={card.descripcion} 
-                  prevSongURL={card.prevSongURL} />
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          transition={{ duration: 1 }}
+          style={{
+              borderRadius: 15,
+              overflow: 'hidden',
+              textAlign: 'left',
+          }}
+          >
+            {cards.map((proyecto) => (
+              <PresentacionProyectoMusical proyectoMusical={proyecto} />
             ))}
-        </div>
+      </motion.div>         
       </div>
 
     )
@@ -61,7 +51,7 @@ const cards: ProyectoMusical[] = [
       instrumentos: 5,
       email: "proyecto2@example.com",
       telefono: "098-765-4321",
-      descripcion: "Banda Jerezana de Rock Alternativo.",
+      descripcion: "Banda Jerezana de Rock Alternativo. Que se la pasan presentando en el estado de zacatecas pero especificamente Jerez, este texto solo lo escribo para hacerlo más largo y ver si esto está afectando el tamaño de la imagen, o sea que si el tamaño del texto afecte que esta imagen, adios amen.",
       generoMusical: "Jazz",
       password: "password456",
       imagenURL: "https://i.imgur.com/QnC4ZV6.jpeg",

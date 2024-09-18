@@ -1,5 +1,5 @@
 interface ProyectoMusical {
-    id: string,
+    id: number,
     nombre: string,
     instrumentos: number,
     email: string,
