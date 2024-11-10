@@ -1,9 +1,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
-import CartaProyectoMusical from "./CartaProyectoMusical";
+import CartaArtista from "./cards/CartaArtista";
 
 const IntroPage = () => {
-  const [seleccionadoId, setSeleccionadoId] = React.useState<number | null>();
+  const [seleccionadoId, setSeleccionadoId] = React.useState(false);
 
   const height = window.innerHeight;
 
@@ -14,14 +14,16 @@ const IntroPage = () => {
           display: 'flex', 
           flexDirection: 'row', 
           overflowX: 'scroll',
-          height: height
+          height: height,
         }} 
         >
         {cards.map((card) => (
             <motion.div 
-              onClick={() => setSeleccionadoId(card.id)}
+              onClick={() => setSeleccionadoId(!seleccionadoId)}
               >
-              <CartaProyectoMusical proyectoMusical={card} />
+              <CartaArtista 
+                proyectoMusical={card}
+                seleccionado={seleccionadoId} />
             </motion.div>
         ))}
       </motion.div>    

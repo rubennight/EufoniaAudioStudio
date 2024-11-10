@@ -5,7 +5,7 @@
 body {
   --black: #000000;
   --ash-black: #222;
-  --white: #fafafa;
+  --white: #e8e8e8;
   --sky: #00ccff;
   --green: #22dddd;
   --blue: #1300ff;
@@ -115,4 +115,229 @@ section span {
 .label-dinamico:nth-child(2) {
   background-color: #f1c583;
   color: white;
+}
+
+.glassBackground {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(221, 221, 221);
+  display: flex;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.319);;
+}
+
+.glassBackgroundContent1{
+  background: transparent;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgb(221, 221, 221);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  opacity: 0;
+  text-align: justify;
+  background-color: rgba(0, 0, 0, 0.319);;
+}
+
+.glassBackgroundContent1 h2 {
+  color: #f1f1f1;
+}
+
+.glassBackgroundContent1 p {
+  color: #f1f1f1;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0); 
+  bottom: 0;
+}
+
+.menuBoton1{
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px;
+}
+
+.menuBoton2{
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px;
+}
+
+.menuBoton3{
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px;
+}
+
+.menuBoton4{
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  padding: 50px;
+}
+
+.menuBoton {
+  flex: 1;
+  height: 100%;
+  transition: flex 0.5s ease;
+  cursor: pointer;
+}
+
+.menuBoton:hover{
+  flex: 3;
+}
+
+.menuBoton:hover .glassBackground{
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.menuBoton:hover .glassBackgroundContent1{
+  opacity: 1;
+  border-radius: 10px;
+}
+
+.menuTitulo{
+  color: #f1f1f1;
+  font-size: 3vw;
+  margin: auto;
+  text-align: center;
+  transform: rotate(90deg);
+  transition: transform 0.5s ease-in-out;
+  top: 15%;
+}
+
+.menuBoton:hover .menuTitulo{
+  color: #f1f1f1;
+  font-size: 3vw;
+  margin: auto;
+  text-align: center;
+  transform: rotate(0deg);
+  transition: transform 0.5s ease-in-out;
+  top: 15%;
+}
+
+.wrapper:hover .menuBoton:not(:hover) {
+  opacity: 0.4; 
+}
+
+.cartaArtista{
+  height: 100%;
+  aspect-ratio: 1 / 0.5;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+}
+
+.cartaArtista .imagen{
+  width: 100%;
+  transition: 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  border-radius: 10px;
+  bottom: 0;
+  right: 0;
+}
+
+.cartaArtista::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid white;
+  border-radius: inherit;
+  opacity: 0;
+  transition: inset 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.cartaArtista:hover ing{
+  filter: grayscale(1) brightness(0.4);
+}
+
+.cartaArtista .contenido {
+  position: absolute;
+  width: 50%;
+  inset: 0;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  color: rgb(222, 222, 222);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  text-align: justify;
+  padding: 20px;
+}
+
+.cartaArtista .descripcionMusical{
+  opacity: 1;
+}
+
+.cartaArtista:hover .contenido {
+  opacity: 1;
+}
+
+.cartaArtista .contenido h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.cartaArtista .contenido p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+}
+
+.inputEufonia{
+  height: 40px;
+  line-height: 28px;
+  padding: 0 1rem;
+  padding-left: 1.0rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.inputEufonia::placeholder {
+  color: #9e9ea7;
+}
+
+.inputEufonia:focus::placeholder {
+  color: #f1f1f1; /* Color del placeholder al hacer focus */
+}
+
+.inputEufonia:focus,
+inputEufonia:hover {
+  outline: none;
+  border-color: rgba(120, 202, 247, 0.4);
+  background-color: transparent;
+  box-shadow: 0 0 0 4px rgba(60, 156, 208, 0.1);
+  color: #f1f1f1;
+}
+
+.preguntasInicioSesion {
+  color: #f1f1f1;
+  text-align: left;
+  font-weight: 200;
+  font-size: smaller;
+}
+
+.linkPregunta{
+  color: #f1f1f1;
+  text-decoration: none;
+}
+
+.linkPregunta:hover{
+  text-decoration: underline;
 }

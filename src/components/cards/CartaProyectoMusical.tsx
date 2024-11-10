@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import IFrame from "./IFrame";
+import IFrame from "../IFrame";
 
 const CartaProyectoMusical: React.FC <{ proyectoMusical: ProyectoMusical}>  = ({ proyectoMusical })  => {
   const height = window.innerHeight;
@@ -8,7 +8,7 @@ const CartaProyectoMusical: React.FC <{ proyectoMusical: ProyectoMusical}>  = ({
   return (
     <motion.div style={{
         position: "relative",
-        height: height * 0.7,
+        height: height,
         width: width * 0.3,
         overflow: "hidden",
         backgroundColor: "black",
